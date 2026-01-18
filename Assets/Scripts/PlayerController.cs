@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour // Controlador sinxelo para o xoga
     public bool showKnockGizmos = true;            // Mostrar a esfera do son
     public float knockGizmoDuration = 1.5f;        // Tempo que permanece visible a esfera
     public Color knockGizmoColor = new Color(0f, 1f, 1f, 0.85f); // Cor da esfera (cian)
+    
+    [Header("Bomb")]
+    public GameObject bomb;
+    public float throwForce = 20f;
+    public float guardNoticeRadius = 15f;
 
     // Estado do último knock
     private Vector3 lastKnockPoint;
@@ -66,6 +71,11 @@ public class PlayerController : MonoBehaviour // Controlador sinxelo para o xoga
         {
             HandleSpaceAction();
         }
+        // Detecta E para lanzar bomba
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ThrowBomb();
+        }
     }
 
     //=========================================================================
@@ -91,6 +101,12 @@ public class PlayerController : MonoBehaviour // Controlador sinxelo para o xoga
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 HandleSpaceAction();
+            }
+            
+            // Detecta E para lanzar bomba
+            if (Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                ThrowBomb();
             }
         }
 #else
@@ -139,6 +155,29 @@ public class PlayerController : MonoBehaviour // Controlador sinxelo para o xoga
             if (dist <= knockRadius)
             {
                 guard.InvestigatePoint(point);
+            }
+        }
+    }
+    //=========================================================================
+    // Lanza unha bomba
+    //=========================================================================
+    void ThrowBomb()
+    {
+        Vector3 point = transform.position;
+        // Crea a bomba
+        GameObject bombObject = Instantiate(bomb, point + transform.forward, Quaternion.identity);
+
+        // Aplícalle a forza de lanzamento
+        bombObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce, ForceMode.Impulse);
+
+        // Notifica aos gardas próximos para fuxir
+        GuardController[] guards = FindObjectsByType<GuardController>(FindObjectsSortMode.None);
+        foreach (var guard in guards)
+        {
+            float dist = Vector3.Distance(guard.transform.position, point);
+            if (dist <= guardNoticeRadius)
+            {
+                guard.SetStateReunite();
             }
         }
     }

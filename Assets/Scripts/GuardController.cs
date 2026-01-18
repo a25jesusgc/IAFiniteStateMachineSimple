@@ -12,7 +12,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))] // Require un NavMeshAgent para o movemento
 public class GuardController : MonoBehaviour // Controlador de gardián con FSM (Finite State Machine)
 {
-    enum State { Patrol, Investigate, Chase }; // Estados da FSM: Patrullar, Investigar, Perseguir
+    enum State { Patrol, Investigate, Chase, Reunite }; // Estados da FSM: Patrullar, Investigar, Perseguir, Volver a punto de reunión
     State currentState = State.Patrol; // Estado actual, comeza en Patrol
     Vector3 lastPlaceSeen; // Última posición onde se viu o xogador
     public Transform player; // Referencia ao transform do xogador
@@ -31,6 +31,9 @@ public class GuardController : MonoBehaviour // Controlador de gardián con FSM 
     public float patrolDistance = 10.0f; // Radio de patrulla
     public float patrolWait = 5.0f; // Tempo de espera entre puntos de patrulla
     float patrolTimePassed = 0; // Tempo pasado desde o último cambio de punto de patrulla
+
+    [Header("Reunite Settings")]
+    public Transform reunionPoint; // Punto de reunión
 
     //=========================================================================
     // Comproba se o gardián pode ver ao xogador dentro do seu campo de visión (distancia e ángulo) e sen obstrucións.
@@ -72,16 +75,19 @@ public class GuardController : MonoBehaviour // Controlador de gardián con FSM 
     {
         State tempState = currentState; // Garda o estado actual para detectar cambios
 
-        if (ICanSee(player)) // Se ve o xogador
+        if (currentState != State.Reunite)
         {
-            currentState = State.Chase; // Cambia a perseguir
-            lastPlaceSeen = player.position; // Actualiza a última posición vista
-        }
-        else
-        {
-            if (currentState == State.Chase) // Se estaba perseguindo e xa non ve o xogador
+            if (ICanSee(player)) // Se ve o xogador
             {
-                currentState = State.Investigate; // Cambia a investigar
+                currentState = State.Chase; // Cambia a perseguir
+                lastPlaceSeen = player.position; // Actualiza a última posición vista
+            }
+            else
+            {
+                if (currentState == State.Chase) // Se estaba perseguindo e xa non ve o xogador
+                {
+                    currentState = State.Investigate; // Cambia a investigar
+                }
             }
         }
 
@@ -95,6 +101,9 @@ public class GuardController : MonoBehaviour // Controlador de gardián con FSM 
                 break;
             case State.Chase:
                 Chase(player);
+                break;
+            case State.Reunite:
+                Reunite();
                 break;
         }
 
@@ -160,6 +169,23 @@ public class GuardController : MonoBehaviour // Controlador de gardián con FSM 
             GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(patrollingPoint); // Establece o destino
         }
     }
+    //=========================================================================
+    // Se reúne ao punto de reunión
+    //=========================================================================
+    void Reunite() // Volve ao punto de reunión
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, reunionPoint.position); // Distancia ao punto de reunión
+
+        if (distanceToTarget < GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance + 2f) // Se chegou ao punto
+        {
+            currentState = State.Patrol; // Cambia a patrullar
+        }
+        else
+        {
+            GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(reunionPoint.position); // Móvese cara o punto de reunión
+            Debug.Log("Guard's state: " + currentState);
+        }
+    }
 
     //=========================================================================
     // Ordena investigar un punto externo (p.ex. a orixe dun ruído) e muda o estado a Investigar
@@ -169,6 +195,13 @@ public class GuardController : MonoBehaviour // Controlador de gardián con FSM 
     {
         lastPlaceSeen = point; // Establece o punto a investigar
         currentState = State.Investigate; // Cambia a estado Investigate
+    }
+    //=========================================================================
+    // Ordena ao garda a volver ao punto de reunión
+    //=========================================================================        
+    public void SetStateReunite() // Ordena ao gardián volver ao return point
+    {
+        currentState = State.Reunite;
     }
 
     //=========================================================================

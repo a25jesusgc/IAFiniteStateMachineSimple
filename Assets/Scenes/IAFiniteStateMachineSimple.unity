@@ -140,6 +140,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 1982866514}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -342,6 +346,10 @@ PrefabInstance:
       propertyPath: chasingSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 335057411}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
@@ -573,6 +581,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 394060364}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -766,6 +778,37 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &335057410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335057411}
+  m_Layer: 0
+  m_Name: ReunionPointB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335057411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335057410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1850921902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &357135434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,6 +829,10 @@ PrefabInstance:
       propertyPath: chasingSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 394060364}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
@@ -843,6 +890,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+--- !u!1 &394060363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394060364}
+  m_Layer: 0
+  m_Name: ReunionPointC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394060364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394060363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42, y: 0, z: 42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1850921902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1069,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 335057411}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -1072,6 +1154,10 @@ PrefabInstance:
       propertyPath: chasingSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 1982866514}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
@@ -1397,6 +1483,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 394060364}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -1473,6 +1563,10 @@ PrefabInstance:
       propertyPath: chasingSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 1982866514}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
@@ -1555,6 +1649,10 @@ PrefabInstance:
       propertyPath: chasingSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 1982866514}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
@@ -1833,6 +1931,71 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 280284195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1850921901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850921902}
+  m_Layer: 0
+  m_Name: ReunionPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850921902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850921901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1982866514}
+  - {fileID: 335057411}
+  - {fileID: 394060364}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1982866513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982866514}
+  m_Layer: 0
+  m_Name: ReunionPointA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982866514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982866513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1850921902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983997288
 GameObject:
@@ -2124,6 +2287,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 335057411}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -2312,6 +2479,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
+      propertyPath: reunionPoint
+      value: 
+      objectReference: {fileID: 335057411}
+    - target: {fileID: 1090204896589728549, guid: f89e838554b76014f927ec030bd5a77b, type: 3}
       propertyPath: showFOVGizmos
       value: 1
       objectReference: {fileID: 0}
@@ -2429,6 +2600,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6098802131262641639, guid: 34caf90522071ba4b8118136739a0bf8, type: 3}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 5505349280414347437, guid: d9a75455e29e5e5469ccf90d73fbb4b6, type: 3}
+    - target: {fileID: 6098802131262641639, guid: 34caf90522071ba4b8118136739a0bf8, type: 3}
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -2459,3 +2634,4 @@ SceneRoots:
   - {fileID: 280284195}
   - {fileID: 8727796188488827052}
   - {fileID: 2052888410}
+  - {fileID: 1850921902}
